@@ -5,7 +5,7 @@ var FireBase = require('firebase');
 var Header = require('./header');
 var rootUrl = 'https://resplendent-inferno-4387.firebaseio.com/';
 
-var Hello = React.createClass({
+var App = React.createClass({
   mixins: [ReactFire],
   componentWillMount: function() {
     this.bindAsObject(new FireBase(rootUrl + 'items/'), 'items');
@@ -17,11 +17,11 @@ var Hello = React.createClass({
         <h2 className="text-center">
           To-Do List
         </h2>
-        <Header />
+        <Header itemStore={this.firebaseRefs.items} />
       </div>
     </div>
   }
 });
 
-var element = React.createElement(Hello, {});
+var element = React.createElement(App, {});
 ReactDOM.render(element, document.querySelector('.container'));
