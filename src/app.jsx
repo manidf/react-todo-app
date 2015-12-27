@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactFire = require('reactfire');
 var FireBase = require('firebase');
+var Header = require('./header');
 var rootUrl = 'https://resplendent-inferno-4387.firebaseio.com/';
 
 var Hello = React.createClass({
@@ -11,9 +12,14 @@ var Hello = React.createClass({
   },
   render: function() {
     console.log(this.state);
-    return <h1 className="red">
-      Hello WORLD!
-    </h1>
+    return <div className="row panel panel-default">
+      <div className="col-md-8 col-md-offset-2">
+        <h2 className="text-center">
+          To-Do List
+        </h2>
+        <Header />
+      </div>
+    </div>
   }
 });
 
