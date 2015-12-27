@@ -10,6 +10,6 @@ Built with with React JS and Flux
 Start the app with these two commands
 
 ```
-	> npm install
-	> gulp
+	$ npm install
+	$ gulp
 ```
