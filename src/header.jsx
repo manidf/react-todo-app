@@ -29,8 +29,7 @@ module.exports = React.createClass({
          done: false
       });
       this.setState({ text: ''});
-      console.log(this.state.text);
-
+      //console.log(this.state.text);
    },
    handleInputChange: function(event) {
       this.setState({ text: event.target.value });
