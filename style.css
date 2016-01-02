@@ -8,3 +8,6 @@
 .loaded {
   opacity: 1;
   transition: opacity 1s ease-in; }
+
+.input-group {
+  margin-bottom: 15px; }
