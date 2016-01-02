@@ -25,6 +25,7 @@ module.exports = React.createClass({
            </span>
 
          <input type="text"
+                disabled={this.state.done}
                 className="form-control"
                 value={this.state.text}
                 onChange={this.handleTextChange}
@@ -47,10 +48,28 @@ module.exports = React.createClass({
          return null
       } else {
          return [
-            <button className="btn btn-default">Save</button>,
-            <button className="btn btn-default">Undo</button>
+            <button
+                onClick={this.handleUndoClick}
+                className="btn btn-default">
+                Save
+            </button>,
+            <button
+                onClick={this.handleSaveClick}
+                className="btn btn-default">
+                Undo
+            </button>
          ]
       }
+   },
+   handleSaveClick: function() {
+      this.fb.update({ text: this.state.text });
+      this.setState({ textChanged: false })
+   },
+   handleUndoClick: function() {
+     this.setState({
+        text: this.props.item.text,
+        textChanged: false
+     });
    },
    handleTextChange: function (event) {
       this.setState({
